@@ -184,7 +184,7 @@ class Graph{
 			g2d.fillOval(coordX[i]-15, coordY[i]-15,30,30);
 			g2d.setColor(Color.BLACK);
 			g2d.drawOval(coordX[i]-15, coordY[i]-15,30,30);
-			g2d.drawString(Integer.toString(i), coordX[i], coordY[i]);
+			g2d.drawString(Integer.toString(i), coordX[i]-5, coordY[i]+5);
 		}
 
 		return image;
@@ -207,5 +207,31 @@ class Graph{
 			writer.close();
 			
     	} catch (IOException e){}                                             
-    }    
+    } 
+       
+    /**
+     * Méthode qui remet à zéro l'arbre couvrant
+     */
+    public void resetArbreCouvrant() {
+    	for (Edge e : edges()) {
+    		e.used = false;
+    	}
+    }
+    
+    /**
+     * Méthode qui renvoie la liste des arêtes prises dans l'arbre couvrant
+     * @return liste des arêtes de l'arbre couvrant
+     */
+    public ArrayList<Edge> aretesArbreCouvrant() {
+    	ArrayList<Edge> list = new ArrayList<Edge>();
+    	
+    	for (Edge e : edges()) {
+    		
+    		if (e.used) {
+    			list.add(e);
+    		}
+    	}
+    	
+    	return list;
+    }
 }

@@ -37,5 +37,15 @@ class Edge {
     	} else {
     		return this.from;
     	}
-    }    
+    }
+    
+    /**
+     * Méthode equals qui teste si l'arête possède les sommets u -> v
+     * @param u : sommet from
+     * @param v : sommet to
+     * @return true si l'arête possède les sommets u -> v
+     */
+    boolean equals(int u, int v) {
+    	return ((u== from) && (v == to));
+    }
 }
