@@ -87,7 +87,7 @@ public class AldousBroder {
 	 * @param N : nombre de test à faire
 	 */
 	public void testG1(int N) {
-		Graph G = Graph.example();
+		Graph G = Graph.exampleG1();
 		int nb1 = 0, nb2 = 0, nb3 = 0, nb4 = 0, nb5 = 0, nb6 = 0, nb7 = 0, nb8 = 0;
 
 		//A chaque test

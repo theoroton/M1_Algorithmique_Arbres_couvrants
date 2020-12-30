@@ -102,17 +102,49 @@ class Graph{
        
        return list;
     }
+       
+    /**
+     * Méthode qui renvoie le graphe G0
+     * @return graphe G0
+     */
+    static Graph exampleG0() {
+    	Graph g = new Graph(7);
+    	//Sommets
+    	g.setCoordinate(0, 50, 250);
+    	g.setCoordinate(1, 150, 250);
+    	g.setCoordinate(2, 250, 250);
+    	g.setCoordinate(3, 150, 150);
+    	g.setCoordinate(4, 250, 150);
+    	g.setCoordinate(5, 350, 250);
+    	g.setCoordinate(6, 250, 50);
+    	//Arêtes
+    	g.addEdge(new Edge(0,1));
+    	g.addEdge(new Edge(0,3));
+    	g.addEdge(new Edge(1,2));
+    	g.addEdge(new Edge(1,3));
+    	g.addEdge(new Edge(2,4));
+    	g.addEdge(new Edge(2,5));
+    	g.addEdge(new Edge(3,4));
+    	g.addEdge(new Edge(3,6));
+    	g.addEdge(new Edge(4,5));
+    	g.addEdge(new Edge(4,6));
+    	g.addEdge(new Edge(5,6));
+    	
+    	return g;
+    }
 
     /**
      * Méthode qui renvoie le graphe G1
      * @return graphe G1
      */
-    static Graph example(){
+    static Graph exampleG1() {
     	Graph g = new Graph(4);
+    	//Sommets
     	g.setCoordinate(0, 100,100);
     	g.setCoordinate(1, 300,300);
     	g.setCoordinate(2, 300,100);
 		g.setCoordinate(3, 100,300);
+		//Arêtes
 		g.addEdge(new Edge(0,1));
 		g.addEdge(new Edge(0,2));
 		g.addEdge(new Edge(0,3));
@@ -122,6 +154,25 @@ class Graph{
 		return g;
     }
 
+    /**
+     * Méthode qui renvoie le graphe G2
+     * @return graphe G2
+     */
+    static Graph exampleG2() {
+    	Graph g = new Graph(4);
+    	//Sommets
+    	g.setCoordinate(0, 100,100);
+    	g.setCoordinate(1, 300,300);
+    	g.setCoordinate(2, 300,100);
+		g.setCoordinate(3, 100,300);
+		//Arêtes
+		g.addEdge(new Edge(0,2));
+		g.addEdge(new Edge(0,3));
+		g.addEdge(new Edge(1,2));
+		g.addEdge(new Edge(1,3));
+		
+		return g;
+    }
 
     /**
      * Méthode qui renvoie une grille de n * n

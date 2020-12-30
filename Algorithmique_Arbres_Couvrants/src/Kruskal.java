@@ -100,7 +100,7 @@ public class Kruskal {
 	 * @param N : nombre de test à faire
 	 */
 	public void testG1(int N) {
-		Graph G = Graph.example();
+		Graph G = Graph.exampleG1();
 		int nb1 = 0, nb2 = 0, nb3 = 0, nb4 = 0, nb5 = 0, nb6 = 0, nb7 = 0, nb8 = 0;
 
 		//A chaque test
@@ -133,6 +133,39 @@ public class Kruskal {
 		System.out.println("Arbre couvrant 6 : [0-1; 0-2; 1-3] | Proportion : " + ((double) nb6/N) * 100 + "%");
 		System.out.println("Arbre couvrant 7 : [0-1; 0-2; 0-3] | Proportion : " + ((double) nb7/N) * 100 + "%");
 		System.out.println("Arbre couvrant 8 : [0-1; 1-2; 1-3] | Proportion : " + ((double) nb8/N) * 100 + "%");
+	}
+	
+
+	/**
+	 * Méthode qui permet de tester l'algorithme de Kruskal sur le graphe G2
+	 * @param N : nombre de test à faire
+	 */
+	public void testG2(int N) {
+		Graph G = Graph.exampleG2();
+		int nb1 = 0, nb2 = 0, nb3 = 0, nb4 = 0;
+
+		//A chaque test
+		for (int i=0; i<N; i++) {
+			//On lance l'algorithme
+			arbreCouvrant(G);
+			//On récupère les arêtes de l'arbre couvrant
+			ArrayList<Edge> list = G.aretesArbreCouvrant();
+			
+			//On teste quel arbre couvrant on a
+			if (list.get(0).equals(0,2) && list.get(1).equals(1,2) && list.get(2).equals(1,3)) { nb1++; }
+			else if (list.get(0).equals(0,2) && list.get(1).equals(0,3) && list.get(2).equals(1,2)) { nb2++; }
+			else if (list.get(0).equals(0,2) && list.get(1).equals(0,3) && list.get(2).equals(1,3)) { nb3++; }
+			else if (list.get(0).equals(0,3) && list.get(1).equals(1,2) && list.get(2).equals(1,3)) { nb4++; }
+			
+			//On remet à zéro l'arbre couvrant et on relance l'algorithme
+			G.resetArbreCouvrant();
+		}
+		
+		//Affichage des résultats
+		System.out.println("Arbre couvrant 1 : [0-2; 1-2; 1-3] | Proportion : " + ((double) nb1/N) * 100 + "%");
+		System.out.println("Arbre couvrant 2 : [0-2; 0-3; 1-2] | Proportion : " + ((double) nb2/N) * 100 + "%");
+		System.out.println("Arbre couvrant 3 : [0-2; 0-3; 1-3] | Proportion : " + ((double) nb3/N) * 100 + "%");
+		System.out.println("Arbre couvrant 4 : [0-3; 1-2; 1-3] | Proportion : " + ((double) nb4/N) * 100 + "%");
 	}
 	
 	/**
