@@ -1,4 +1,5 @@
 
+
 /**
  * 
  * Représente une arête non orientée

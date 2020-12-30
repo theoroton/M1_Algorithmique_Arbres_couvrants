@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -7,10 +8,12 @@ import java.util.Collections;
  * Classe représentant l'algorithme de Kruskal
  */
 public class Kruskal {
+
 	
 	//Tableau parent pour Union-Fin
 	private int[] parent;
 
+	
 	/**
 	 * Méthode qui crée un arbre couvrant pour le graphe g
 	 * @param g : graphe dans lequel on cherche un arbre couvrant
@@ -46,6 +49,7 @@ public class Kruskal {
 		}
 	}
 
+	
 	/**
 	 * Méthode makeSet qui construit la classe d'équivalence de chaque sommet 
 	 * @param vertices : nombre de sommets
@@ -57,6 +61,7 @@ public class Kruskal {
 			parent[i] = i;
 		}	
 	}
+
 	
 	/**
 	 * Méthode find qui détermine la classe d'équivalence du sommet s
@@ -75,6 +80,7 @@ public class Kruskal {
 			return find(parent[s]);
 		}
 	}
+
 	
 	/**
 	 * Méthode union qui permet d'unir 2 sommets dans le même ensemble
@@ -167,6 +173,7 @@ public class Kruskal {
 		System.out.println("Arbre couvrant 3 : [0-2; 0-3; 1-3] | Proportion : " + ((double) nb3/N) * 100 + "%");
 		System.out.println("Arbre couvrant 4 : [0-3; 1-2; 1-3] | Proportion : " + ((double) nb4/N) * 100 + "%");
 	}
+
 	
 	/**
 	 * Méthode main pour lancer le test de l'algorithme de Kruskal
