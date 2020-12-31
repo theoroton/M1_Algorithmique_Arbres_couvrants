@@ -6,7 +6,7 @@ public class Main {
 	 * Lance la création d'un labyrinthe de taille N * N et l'affiche
 	 */
 	public static void main(String[] args) {
-		Labyrinthe l = new Labyrinthe(5);
+		Labyrinthe l = new Labyrinthe(5, 1);
 
 		JFrame fenetre = new JFrame("Labyrinthe");
 		JPanelLabyrinthe jpanel = new JPanelLabyrinthe(l);
