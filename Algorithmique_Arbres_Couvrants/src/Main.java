@@ -1,18 +1,19 @@
+import javax.swing.JFrame;
 
 public class Main {
 
+	/**
+	 * Lance la création d'un labyrinthe de taille N * N et l'affiche
+	 */
 	public static void main(String[] args) {
-		Graph G;
+		Labyrinthe l = new Labyrinthe(5);
+
+		JFrame fenetre = new JFrame("Labyrinthe");
+		JPanelLabyrinthe jpanel = new JPanelLabyrinthe(l);
 		
-		//G = Graph.exampleG0();
-		G = Graph.exampleG1();
-		
-		//Kruskal k = new Kruskal(); k.arbreCouvrant(G);
-		//AldousBroder a = new AldousBroder(); a.arbreCouvrant(G);
-		//Wilson w = new Wilson(); w.arbreCouvrant(G);
-    	
-    	Display d = new Display();
-    	d.setImage(G.toImage());
+		fenetre.add(jpanel);
+		fenetre.setSize(jpanel.getTaille(), jpanel.getTaille());
+		fenetre.setVisible(true);
 	}
 
 }
